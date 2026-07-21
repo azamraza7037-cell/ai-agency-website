@@ -77,3 +77,70 @@ body{
     border:1px solid white;
     color:white;
 }
+/* ===== Premium Navbar ===== */
+
+.navbar{
+    position: sticky;
+    top: 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 8%;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(15px);
+    z-index:1000;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:700;
+    letter-spacing:2px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.logo:hover{
+    color:#00d4ff;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#00d4ff;
+} .btn-primary{
+    background:#00d4ff;
+    color:#000;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 20px #00d4ff;
+}
+
+.btn-secondary{
+    transition:.3s;
+}
+
+.btn-secondary:hover{
+    background:white;
+    color:black;
+}.hero-content h1{
+    text-shadow:0 0 25px rgba(0,212,255,.35);
+}
+
+.hero-content p{
+    font-size:22px;
+}
