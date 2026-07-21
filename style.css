@@ -1,1 +1,79 @@
-/* AI Agency Website CSS */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#0b0b0b;
+    color:white;
+}
+
+.hero{
+    min-height:100vh;
+    padding:40px 8%;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+}
+
+.hero-content{
+    text-align:center;
+    margin-top:140px;
+}
+
+.hero-content h1{
+    font-size:64px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:22px;
+    color:#bdbdbd;
+    max-width:750px;
+    margin:auto;
+    line-height:1.7;
+}
+
+.hero-buttons{
+    margin-top:40px;
+}
+
+.btn-primary,
+.btn-secondary{
+    padding:14px 30px;
+    border-radius:8px;
+    text-decoration:none;
+    display:inline-block;
+    margin:10px;
+}
+
+.btn-primary{
+    background:white;
+    color:black;
+}
+
+.btn-secondary{
+    border:1px solid white;
+    color:white;
+}
