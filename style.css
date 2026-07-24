@@ -12,9 +12,10 @@ html{
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#050816;
+    background:linear-gradient(135deg,#050816,#081224,#0b0b0b);
     color:#fff;
-    overflow-x:hidden;
+   overflow-x:hidden;
+position:relative;
 }
 
 /* ==========================
@@ -382,4 +383,37 @@ body{
 
 .footer p{
     margin:0;
+}
+body::before{
+    content:"";
+    position:fixed;
+    top:-250px;
+    right:-250px;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle,rgba(0,212,255,.25),transparent 70%);
+    filter:blur(40px);
+    z-index:-1;
+    animation:glowMove 8s ease-in-out infinite alternate;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    bottom:-250px;
+    left:-250px;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,rgba(0,140,255,.18),transparent 70%);
+    filter:blur(40px);
+    z-index:-1;
+}
+
+@keyframes glowMove{
+    from{
+        transform:translateY(0) translateX(0);
+    }
+    to{
+        transform:translateY(60px) translateX(-60px);
+    }
 }
