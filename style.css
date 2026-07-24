@@ -291,3 +291,48 @@ body{
     color:#b8c5d6;
     line-height:1.7;
 }
+/* ===== Contact Section ===== */
+
+.contact{
+    padding:100px 8%;
+    text-align:center;
+}
+
+.contact h2{
+    font-size:48px;
+    margin-bottom:20px;
+    color:#00d4ff;
+}
+
+.contact > p{
+    color:#bdbdbd;
+    font-size:20px;
+    margin-bottom:50px;
+}
+
+.contact-box{
+    max-width:600px;
+    margin:auto;
+    padding:40px;
+    border-radius:20px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 30px rgba(0,212,255,.15);
+}
+
+.contact-box h3{
+    font-size:34px;
+    margin-bottom:20px;
+}
+
+.contact-box p{
+    font-size:20px;
+    margin:15px 0;
+    color:#d8d8d8;
+}
+
+.contact-box .btn-primary{
+    margin-top:25px;
+    display:inline-block;
+}
