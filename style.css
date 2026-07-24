@@ -1,3 +1,7 @@
+/* ==========================
+   RESET
+========================== */
+
 *{
     margin:0;
     padding:0;
@@ -5,141 +9,69 @@
 }
 
 body{
-    font-family: 'Poppins', sans-serif;
-    background:#0b0b0b;
-    color:white;
+    font-family:'Poppins',sans-serif;
+    background:#050816;
+    color:#fff;
+    overflow-x:hidden;
 }
+
+/* ==========================
+   HERO SECTION
+========================== */
 
 .hero{
     min-height:100vh;
-    padding:40px 8%;
-    display:flex;
-    flex-direction:column;
-}
-.hero-content{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:60px;
-    margin-top:80px;
-    flex-wrap:wrap;
+    padding:30px 8%;
+    position:relative;
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top right,
+    rgba(0,170,255,.18),
+    transparent 35%),
+
+    radial-gradient(circle at bottom left,
+    rgba(0,120,255,.12),
+    transparent 40%),
+
+    #050816;
 }
 
-.hero-text{
-    flex:1;
-    min-width:320px;
-    text-align:left;
-}
-.hero-image img{
-    width:100%;
-    max-width:480px;
-    height:auto;
-    filter:drop-shadow(0 0 35px rgba(0,170,255,.8));
-    animation:floatRobot 4s ease-in-out infinite;
-}
-
-@keyframes floatRobot{
-    0%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-18px);
-    }
-
-    100%{
-        transform:translateY(0);
-    }
-}
+/* ==========================
+   NAVBAR
+========================== */
 
 .navbar{
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
+    padding:18px 35px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
 }
 
 .logo{
-    font-size:28px;
-    font-weight:bold;
-}
 
-.nav-links{
-    display:flex;
-    gap:30px;
-    list-style:none;
-}
-
-.nav-links a{
-    color:white;
-    text-decoration:none;
-}
-.hero-content{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:60px;
-    margin-top:80px;
-}
-.hero-content h1{
-    font-size:64px;
-    margin-bottom:20px;
-    text-align:left;
-}
-.hero-content p{
-    font-size:22px;
-    color:#bdbdbd;
-    max-width:750px;
-    margin:0;
-    line-height:1.7;
-}
-
-.hero-buttons{
-    margin-top:40px;
-}
-
-.btn-primary,
-.btn-secondary{
-    padding:14px 30px;
-    border-radius:8px;
-    text-decoration:none;
-    display:inline-block;
-    margin:10px;
-}
-
-.btn-primary{
-    background:white;
-    color:black;
-}
-
-.btn-secondary{
-    border:1px solid white;
-    color:white;
-}
-/* ===== Premium Navbar ===== */
-
-.navbar{
-    position: sticky;
-    top: 0;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 8%;
-    background:rgba(0,0,0,.75);
-    backdrop-filter:blur(15px);
-    z-index:1000;
-}
-
-.logo{
-    font-size:32px;
+    font-size:30px;
     font-weight:700;
-    letter-spacing:2px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.logo:hover{
     color:#00d4ff;
+
+    letter-spacing:2px;
+
 }
+/* ==========================
+   NAVIGATION
+========================== */
 
 .nav-links{
     display:flex;
@@ -148,37 +80,166 @@ body{
 }
 
 .nav-links a{
-    color:white;
+    color:#ffffff;
     text-decoration:none;
     font-size:17px;
-    transition:.3s;
+    font-weight:500;
+    transition:0.3s ease;
 }
 
 .nav-links a:hover{
     color:#00d4ff;
-} .btn-primary{
+}
+
+/* ==========================
+   HERO LAYOUT
+========================== */
+
+.hero-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:80px;
+    min-height:80vh;
+}
+
+.hero-text{
+    flex:1;
+    max-width:620px;
+}
+
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+/* ==========================
+   HERO TEXT
+========================== */
+
+.hero-text h1{
+    font-size:64px;
+    font-weight:700;
+    line-height:1.1;
+    margin-bottom:24px;
+
+    background:linear-gradient(90deg,#ffffff,#00d4ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+    font-size:20px;
+    line-height:1.8;
+    color:#b8c5d6;
+    margin-bottom:35px;
+}
+
+/* ==========================
+   HERO BUTTONS
+========================== */
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn-primary,
+.btn-secondary{
+    padding:15px 32px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.35s ease;
+}
+
+.btn-primary{
     background:#00d4ff;
-    color:#000;
-    font-weight:bold;
-    transition:.3s;
+    color:#050816;
 }
 
 .btn-primary:hover{
     transform:translateY(-4px);
-    box-shadow:0 0 20px #00d4ff;
+    box-shadow:0 0 30px rgba(0,212,255,.45);
 }
 
 .btn-secondary{
-    transition:.3s;
+    border:1px solid rgba(255,255,255,.25);
+    color:#ffffff;
 }
 
 .btn-secondary:hover{
-    background:white;
-    color:black;
-}.hero-content h1{
-    text-shadow:0 0 25px rgba(0,212,255,.35);
+    background:rgba(255,255,255,.08);
+}
+/* ==========================
+   AI ROBOT
+========================== */
+
+.hero-image img{
+    width:100%;
+    max-width:500px;
+    height:auto;
+
+    filter:drop-shadow(0 0 40px rgba(0,212,255,.65));
+
+    animation:floatRobot 5s ease-in-out infinite;
+
+    transition:transform .35s ease;
 }
 
-.hero-content p{
-    font-size:22px;
+.hero-image img:hover{
+    transform:scale(1.04);
+}
+
+/* ==========================
+   FLOAT ANIMATION
+========================== */
+
+@keyframes floatRobot{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-18px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* ==========================
+   HERO GLOW
+========================== */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+    height:550px;
+
+    right:-120px;
+    top:-120px;
+
+    border-radius:50%;
+
+    background:rgba(0,212,255,.15);
+
+    filter:blur(120px);
+
+    z-index:0;
+}
+
+.hero-content,
+.navbar{
+    position:relative;
+    z-index:2;
 }
