@@ -13,6 +13,11 @@ let currentWord = "";
 let isDeleting = false;
 
 const typingElement = document.getElementById("typing");
+if (!typingElement) {
+    console.log("Typing element not found");
+} else {
+    console.log("Typing element found");
+}
 
 function typeEffect(){
 
