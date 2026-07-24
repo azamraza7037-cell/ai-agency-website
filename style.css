@@ -368,3 +368,16 @@ body{
 .contact-box .btn-primary{
     margin-top:25px;
 }
+.footer{
+    text-align:center;
+    padding:30px 8%;
+    background:#080b16;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#9fa9c2;
+    font-size:16px;
+    margin-top:80px;
+}
+
+.footer p{
+    margin:0;
+}
