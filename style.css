@@ -354,3 +354,17 @@ body{
 .contact-box p{
     line-height:1.8;
 }
+.contact{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.contact-box{
+    text-align:center;
+}
+
+.contact-box .btn-primary{
+    margin-top:25px;
+}
