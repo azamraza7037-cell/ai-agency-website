@@ -45,24 +45,29 @@ position:relative;
 ========================== */
 
 .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    padding: 18px 35px;
 
-    padding:18px 35px;
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
 
-    background:rgba(255,255,255,.05);
+    background: rgba(10, 15, 35, 0.55);
 
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    border:1px solid rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,0.08);
 
-    border-radius:18px;
-position: sticky;
-top: 20px;
-z-index: 1000;
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 32px rgba(0,140,255,0.20);
+
+    transition: all 0.3s ease;
 }
 
 .logo{
