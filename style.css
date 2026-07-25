@@ -735,3 +735,27 @@ body::after{
         transform: translate(0,0) scale(1);
     }
 }
+/* ===========================
+   MOBILE RESPONSIVE - PART 1
+=========================== */
+
+@media (max-width: 768px){
+
+    .navbar{
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .logo{
+        font-size: 24px;
+    }
+
+}
