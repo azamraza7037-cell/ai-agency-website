@@ -46,3 +46,55 @@ function typeEffect(){
 }
 
 typeEffect();
+particlesJS("particles-js", {
+  particles: {
+    number: {
+      value: 60,
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    },
+    color: {
+      value: "#3b82f6"
+    },
+    shape: {
+      type: "circle"
+    },
+    opacity: {
+      value: 0.5
+    },
+    size: {
+      value: 3,
+      random: true
+    },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#3b82f6",
+      opacity: 0.3,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 2
+    }
+  },
+  interactivity: {
+    events: {
+      onhover: {
+        enable: true,
+        mode: "grab"
+      }
+    },
+    modes: {
+      grab: {
+        distance: 140,
+        line_linked: {
+          opacity: 0.8
+        }
+      }
+    }
+  },
+  retina_detect: true
+});
