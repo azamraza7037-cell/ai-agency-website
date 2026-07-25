@@ -819,3 +819,58 @@ body::after{
 .service-card:hover h3{
     color:#3b82f6;
 }
+/* ===========================
+   PREMIUM CONTACT FORM
+=========================== */
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width: 100%;
+    padding: 15px 18px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 12px;
+    background: rgba(255,255,255,.05);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: .3s ease;
+    box-sizing: border-box;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+    color: rgba(255,255,255,.65);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color: #3b82f6;
+    box-shadow: 0 0 20px rgba(59,130,246,.25);
+}
+
+.contact-form textarea{
+    resize: vertical;
+    min-height: 140px;
+}
+/* ===========================
+   CONTACT BUTTON HOVER
+=========================== */
+
+.contact-form .btn-primary{
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form .btn-primary:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(59,130,246,.35);
+}
