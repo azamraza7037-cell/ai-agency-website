@@ -989,3 +989,51 @@ body::after{
 .project-card:hover .project-image{
     transform: scale(1.05);
 }
+/* ===========================
+   COUNTER SECTION
+=========================== */
+
+.counter-section{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    padding:80px 10%;
+    text-align:center;
+}
+
+.counter-box{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:35px 20px;
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    transition:.3s;
+}
+
+.counter-box:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(59,130,246,.25);
+}
+
+.counter-box h2{
+    font-size:48px;
+    color:#3b82f6;
+    margin-bottom:10px;
+}
+
+.counter-box p{
+    color:#cfcfcf;
+}
+
+@media(max-width:992px){
+    .counter-section{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+    .counter-section{
+        grid-template-columns:1fr;
+    }
+}
