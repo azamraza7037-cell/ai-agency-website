@@ -759,3 +759,41 @@ body::after{
     }
 
 }
+     /* ===========================
+   MOBILE HERO SECTION
+=========================== */
+
+@media (max-width: 768px){
+
+    .hero-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+        padding: 40px 20px;
+    }
+
+    .hero-text h1{
+        font-size: 2.2rem;
+        line-height: 1.3;
+    }
+
+    .hero-text p{
+        font-size: 1rem;
+    }
+
+    .hero-image img{
+        width: 280px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .hero-buttons{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+}
