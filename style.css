@@ -684,3 +684,16 @@ body::after{
     border-right:3px solid #00d4ff;
     padding-right:6px;
 }
+/* ===========================
+   PARTICLES BACKGROUND
+=========================== */
+
+#particles-js{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
