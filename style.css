@@ -69,7 +69,22 @@ position:relative;
 
     transition: all 0.3s ease;
 }
+/* =========================================
+   NAVBAR SCROLL STATE
+========================================= */
 
+.navbar.scrolled{
+
+    background:rgba(10,15,35,.85);
+
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+
+    border:1px solid rgba(59,130,246,.25);
+
+    box-shadow:0 12px 35px rgba(0,0,0,.30);
+
+}
 .logo{
 
     font-size:30px;
