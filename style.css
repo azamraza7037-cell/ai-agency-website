@@ -697,3 +697,41 @@ body::after{
     z-index: -1;
     pointer-events: none;
 }
+/* ===========================
+   HERO GLOW EFFECT
+=========================== */
+
+.hero{
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before{
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: -150px;
+    right: -150px;
+    background: radial-gradient(circle, rgba(0,140,255,0.35), transparent 70%);
+    filter: blur(40px);
+    animation: floatGlow 8s ease-in-out infinite;
+    z-index: 0;
+}
+
+.hero > *{
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes floatGlow{
+    0%{
+        transform: translate(0,0) scale(1);
+    }
+    50%{
+        transform: translate(-40px,40px) scale(1.1);
+    }
+    100%{
+        transform: translate(0,0) scale(1);
+    }
+}
