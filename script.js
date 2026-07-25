@@ -185,10 +185,13 @@ window.addEventListener("scroll", () => {
 // EmailJS Contact Form
 
 const contactForm = document.getElementById("contact-form");
-
+const submitButton = contactForm.querySelector("button");
 contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
-
+    const status = document.getElementById("form-status");
+status.textContent = ""; 
+submitButton.disabled = true;
+submitButton.textContent = "Sending...";
     emailjs.sendForm(
         "service_c07tlhq",
         "template_4fb3jlh",
@@ -198,12 +201,22 @@ contactForm.addEventListener("submit", function (e) {
         const status = document.getElementById("form-status");
 status.textContent = "✅ Message sent successfully!";
 status.style.color = "#22c55e";
+        setTimeout(() => {
+    status.textContent = "";
+}, 5000);
         contactForm.reset();
+        submitButton.disabled = false;
+submitButton.textContent = "Send Message";
     })
     .catch((error) => {
         const status = document.getElementById("form-status");
 status.textContent = "❌ Failed to send message. Please try again.";
 status.style.color = "#ef4444";
+        setTimeout(() => {
+    status.textContent = "";
+}, 5000);
         console.error(error);
+        submitButton.disabled = false;
+submitButton.textContent = "Send Message";
     });
 });
