@@ -98,3 +98,8 @@ particlesJS("particles-js", {
   },
   retina_detect: true
 });
+// Initialize AOS Animation
+AOS.init({
+    duration: 1000,
+    once: true
+});
