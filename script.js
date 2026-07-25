@@ -195,11 +195,15 @@ contactForm.addEventListener("submit", function (e) {
         this
     )
     .then(() => {
-        alert("Message sent successfully!");
+        const status = document.getElementById("form-status");
+status.textContent = "✅ Message sent successfully!";
+status.style.color = "#22c55e";
         contactForm.reset();
     })
     .catch((error) => {
-        alert("Failed to send message.");
+        const status = document.getElementById("form-status");
+status.textContent = "❌ Failed to send message. Please try again.";
+status.style.color = "#ef4444";
         console.error(error);
     });
 });
