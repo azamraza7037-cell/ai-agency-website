@@ -797,3 +797,25 @@ body::after{
     }
 
 }
+/* ===========================
+   SERVICES HOVER ANIMATION
+=========================== */
+
+.service-card{
+    transition: all 0.35s ease;
+    cursor: pointer;
+}
+
+.service-card:hover{
+    transform: translateY(-12px);
+    box-shadow: 0 15px 40px rgba(0,140,255,0.30);
+    border-color: #3b82f6;
+}
+
+.service-card h3{
+    transition: color .3s ease;
+}
+
+.service-card:hover h3{
+    color:#3b82f6;
+}
