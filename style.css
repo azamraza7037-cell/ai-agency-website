@@ -1271,3 +1271,10 @@ body::after{
     }
 
 }
+#form-status {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    min-height: 24px;
+}
