@@ -100,7 +100,29 @@ position:relative;
 .nav-links a:hover{
     color:#00d4ff;
 }
+/* =========================================
+   ACTIVE NAVIGATION
+========================================= */
 
+.nav-links a.active{
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.nav-links a::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #3b82f6;
+    transition: width .3s ease;
+    margin-top: 5px;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width: 100%;
+}
 /* ==========================
    HERO LAYOUT
 ========================== */
