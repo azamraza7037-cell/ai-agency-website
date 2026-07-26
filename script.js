@@ -257,7 +257,8 @@ function sendMessage(){
     if(message === ""){
         return;
     }
-
+const visitorName = document.getElementById("visitor-name").value;
+const visitorEmail = document.getElementById("visitor-email").value;
     chatMessages.innerHTML += `
     <p><b>You:</b> ${message}</p>
     `;
@@ -267,7 +268,23 @@ function sendMessage(){
     chatMessages.innerHTML += `
     <p id="typing-ai"><b>AI:</b> Typing...</p>
     `;
+// Send chatbot lead to email
 
+emailjs.send(
+    "service_c07tlhq",
+    "template_4fb3jlh",
+    {
+        name: visitorName,
+        email: visitorEmail,
+        message: message
+    }
+)
+.then(() => {
+    console.log("Chat lead sent");
+})
+.catch((error) => {
+    console.log(error);
+});
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
 
