@@ -1611,3 +1611,31 @@ nav a:hover {
 .lead-form input::placeholder {
     color: #aaa;
 }
+/* WhatsApp Floating Button */
+
+.whatsapp-btn {
+
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: #25D366;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+    text-decoration: none;
+
+    z-index: 9999;
+
+    box-shadow: 0 0 15px rgba(37,211,102,0.5);
+
+}
