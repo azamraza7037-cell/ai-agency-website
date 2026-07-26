@@ -1770,3 +1770,21 @@ nav a:hover {
     object-fit: cover;
 
 }
+/* Fix Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+}
+
+.logo img {
+    display: none;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #00d9ff;
+}
