@@ -1788,3 +1788,21 @@ nav a:hover {
     font-weight: 700;
     color: #00d9ff;
 }
+/* ==========================
+   PREMIUM NAVBAR EFFECT
+========================== */
+
+.navbar {
+
+    position: sticky;
+    top: 0;
+
+    z-index: 999;
+
+    background: rgba(5, 15, 30, 0.75);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(0,217,255,0.15);
+
+}
