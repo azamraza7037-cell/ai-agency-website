@@ -2034,3 +2034,110 @@ nav a:hover {
     transform: translateY(-5px);
 
 }
+/* ==========================
+   MOBILE RESPONSIVE FIX
+========================== */
+
+@media (max-width: 768px){
+
+    .hero{
+        min-height: auto;
+        padding: 50px 20px;
+    }
+
+
+    .hero-content{
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+
+    .hero-text{
+        width:100%;
+    }
+
+
+    .hero-text h1{
+
+        font-size: 42px;
+        line-height: 1.15;
+
+    }
+
+
+    .hero-text p{
+
+        font-size:16px;
+        text-align:center;
+
+    }
+
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+
+    .hero-image img{
+
+        width:280px;
+
+    }
+
+
+    /* Services Cards */
+
+    .services-container,
+    .service-grid{
+
+        grid-template-columns:1fr !important;
+
+    }
+
+
+    /* Projects */
+
+    .projects-container,
+    .projects-grid{
+
+        grid-template-columns:1fr !important;
+
+    }
+
+
+    .project-card{
+
+        width:100%;
+
+    }
+
+
+    /* Contact */
+
+    .contact-form{
+
+        width:90%;
+
+    }
+
+
+    /* FAQ */
+
+    .faq{
+
+        padding:50px 20px;
+
+    }
+
+
+    .faq h2{
+
+        font-size:28px;
+
+    }
+
+
+}
