@@ -248,7 +248,9 @@ if(chatToggle && chatBox){
 
 // Send message
 
-sendBtn.addEventListener("click", () => {
+// Send message function
+
+function sendMessage(){
 
     let message = userMessage.value.trim();
 
@@ -256,28 +258,54 @@ sendBtn.addEventListener("click", () => {
         return;
     }
 
-
-    // User message show
     chatMessages.innerHTML += `
     <p><b>You:</b> ${message}</p>
     `;
 
-
-    let reply = getAIReply(message);
-
-
-    // AI reply show
-    chatMessages.innerHTML += `
-    <p><b>AI:</b> ${reply}</p>
-    `;
-
-
     userMessage.value = "";
+
+    chatMessages.innerHTML += `
+    <p id="typing-ai"><b>AI:</b> Typing...</p>
+    `;
 
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
-});
 
+    setTimeout(() => {
+
+        const typing = document.getElementById("typing-ai");
+
+        if(typing){
+            typing.remove();
+        }
+
+        let reply = getAIReply(message);
+
+        chatMessages.innerHTML += `
+        <p><b>AI:</b> ${reply}</p>
+        `;
+
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    },1000);
+
+}
+
+
+// Send button click
+
+sendBtn.addEventListener("click", sendMessage);
+
+
+// Enter key send
+
+userMessage.addEventListener("keypress", function(e){
+
+    if(e.key === "Enter"){
+        sendMessage();
+    }
+
+});
 
 // Basic AI Replies
 
