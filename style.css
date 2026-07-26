@@ -2310,3 +2310,121 @@ nav a:hover {
 
 
 }
+/* ==========================
+   FUTURISTIC AI HERO EFFECT
+========================== */
+
+
+/* Robot floating */
+
+.hero-image img {
+
+    animation: robotFloat 5s ease-in-out infinite;
+
+}
+
+
+@keyframes robotFloat {
+
+
+    0%{
+
+        transform: translateY(0px);
+
+    }
+
+
+    50%{
+
+        transform: translateY(-25px);
+
+    }
+
+
+    100%{
+
+        transform: translateY(0px);
+
+    }
+
+}
+
+
+
+/* Blue AI Glow */
+
+.hero::before {
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    background:#00d9ff;
+
+    filter:blur(180px);
+
+    opacity:0.15;
+
+    right:5%;
+
+    top:20%;
+
+    z-index:-1;
+
+}
+
+
+
+/* Text glow */
+
+.hero-text h1 {
+
+    text-shadow:
+
+    0 0 15px rgba(0,217,255,0.35),
+
+    0 0 40px rgba(0,217,255,0.2);
+
+}
+
+
+
+/* Button pulse */
+
+.hero-buttons a:first-child {
+
+    animation:pulseBtn 2s infinite;
+
+}
+
+
+
+@keyframes pulseBtn {
+
+
+    0%{
+
+        box-shadow:0 0 0 0 rgba(0,217,255,0.5);
+
+    }
+
+
+    70%{
+
+        box-shadow:0 0 0 20px rgba(0,217,255,0);
+
+    }
+
+
+    100%{
+
+        box-shadow:0 0 0 0 rgba(0,217,255,0);
+
+    }
+
+
+}
