@@ -2141,3 +2141,114 @@ nav a:hover {
 
 
 }
+/* ==========================
+   FINAL HERO FIX
+========================== */
+
+.hero {
+    width:100%;
+    min-height:90vh;
+    padding:120px 8% 80px;
+    display:flex;
+    flex-direction:column;
+}
+
+
+.hero-content {
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items:center;
+
+    gap:50px;
+
+}
+
+
+.hero-text {
+
+    max-width:650px;
+
+}
+
+
+.hero-text h1 {
+
+    font-size:64px;
+
+    line-height:1.1;
+
+    font-weight:800;
+
+}
+
+
+.hero-text h1 span {
+
+    color:#00d9ff;
+
+}
+
+
+.hero-text p {
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    color:#cbd5e1;
+
+}
+
+
+.hero-image {
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+.hero-image img {
+
+    width:450px;
+
+    max-width:100%;
+
+    filter:drop-shadow(0 0 35px #00d9ff);
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-content{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+
+.hero-text h1{
+
+    font-size:42px;
+
+}
+
+
+.hero-image img{
+
+    width:280px;
+
+}
+
+}
