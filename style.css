@@ -2252,3 +2252,61 @@ nav a:hover {
 }
 
 }
+/* ==========================
+   HERO FINAL POLISH
+========================== */
+
+
+.navbar{
+
+    padding-top:25px;
+
+}
+
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
+}
+
+
+.hero-buttons a{
+
+    min-width:130px;
+
+    text-align:center;
+
+}
+
+
+.hero-text{
+
+    transform:translateY(-20px);
+
+}
+
+
+.hero-image{
+
+    transform:translateY(-10px);
+
+}
+
+
+/* Desktop spacing */
+
+@media(min-width:900px){
+
+.hero-content{
+
+    gap:80px;
+
+}
+
+
+}
