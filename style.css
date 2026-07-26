@@ -2428,3 +2428,169 @@ nav a:hover {
 
 
 }
+/* ==========================
+   PREMIUM SERVICES CARDS
+========================== */
+
+
+.services {
+
+    padding:100px 8%;
+
+}
+
+
+.services-container,
+.services-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+
+/* Card */
+
+.service-card {
+
+    background:
+
+    linear-gradient(
+    145deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.03)
+    );
+
+
+    border:1px solid rgba(0,217,255,0.2);
+
+
+    padding:30px;
+
+
+    border-radius:20px;
+
+
+    backdrop-filter:blur(15px);
+
+
+    transition:0.4s;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+}
+
+
+
+/* Glow line */
+
+.service-card::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:100%;
+
+    height:3px;
+
+
+    top:0;
+
+    left:0;
+
+
+    background:#00d9ff;
+
+
+    transform:scaleX(0);
+
+
+    transition:.4s;
+
+}
+
+
+
+
+.service-card:hover::before {
+
+    transform:scaleX(1);
+
+}
+
+
+
+/* Hover */
+
+
+.service-card:hover {
+
+
+    transform:translateY(-12px);
+
+
+    box-shadow:
+
+    0 0 30px rgba(0,217,255,0.25);
+
+
+    border-color:#00d9ff;
+
+}
+
+
+
+.service-card h3 {
+
+
+    color:#00d9ff;
+
+
+    font-size:20px;
+
+
+    margin-bottom:15px;
+
+}
+
+
+
+.service-card p {
+
+
+    color:#cbd5e1;
+
+
+    line-height:1.7;
+
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:900px){
+
+
+.services-container,
+.services-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+}
