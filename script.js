@@ -220,3 +220,86 @@ status.style.color = "#ef4444";
 submitButton.textContent = "Send Message";
     });
 });
+// AI Chatbot
+
+const chatToggle = document.getElementById("chat-toggle");
+const chatBox = document.getElementById("chat-box");
+const sendBtn = document.getElementById("send-btn");
+const userMessage = document.getElementById("user-message");
+const chatMessages = document.getElementById("chat-messages");
+
+
+// Open / Close chatbot
+
+chatToggle.addEventListener("click", () => {
+
+    if (chatBox.style.display === "block") {
+        chatBox.style.display = "none";
+    } else {
+        chatBox.style.display = "block";
+    }
+
+});
+
+
+// Send message
+
+sendBtn.addEventListener("click", () => {
+
+    let message = userMessage.value.trim();
+
+    if(message === ""){
+        return;
+    }
+
+
+    // User message show
+    chatMessages.innerHTML += `
+    <p><b>You:</b> ${message}</p>
+    `;
+
+
+    let reply = getAIReply(message);
+
+
+    // AI reply show
+    chatMessages.innerHTML += `
+    <p><b>AI:</b> ${reply}</p>
+    `;
+
+
+    userMessage.value = "";
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+});
+
+
+// Basic AI Replies
+
+function getAIReply(message){
+
+    message = message.toLowerCase();
+
+
+    if(message.includes("service")){
+        return "We provide AI automation, website development, chatbot solutions and digital services 🚀";
+    }
+
+    else if(message.includes("price") || message.includes("cost")){
+        return "Our pricing depends on your project requirements. Contact us for a custom quote.";
+    }
+
+    else if(message.includes("website")){
+        return "We create modern, responsive and AI-powered websites for businesses.";
+    }
+
+    else if(message.includes("hello") || message.includes("hi")){
+        return "Hello 👋 How can I help you today?";
+    }
+
+    else{
+        return "Thanks for your message! Our AI team will help you with the best solution 🤖";
+    }
+
+}
