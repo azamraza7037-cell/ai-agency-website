@@ -1639,3 +1639,71 @@ nav a:hover {
     box-shadow: 0 0 15px rgba(37,211,102,0.5);
 
 }
+/* ==========================
+   FAQ SECTION
+========================== */
+
+.faq {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+
+.faq-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+
+.faq-item {
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(0,217,255,0.3);
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+
+    text-align: left;
+
+    transition: 0.3s;
+}
+
+
+.faq-item:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 0 20px rgba(0,217,255,0.3);
+
+}
+
+
+.faq-item h3 {
+
+    color: #00d9ff;
+
+    font-size: 20px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.faq-item p {
+
+    color: #ddd;
+
+    line-height: 1.6;
+
+    font-size: 15px;
+
+}
