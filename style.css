@@ -1728,13 +1728,14 @@ nav a:hover {
 
 
 .faq-answer {
-
-    display: none;
-
+    display: none !important;
     margin-top: 15px;
-
 }
 
+
+.faq-item.active .faq-answer {
+    display: block !important;
+}
 
 .faq-item.active .faq-answer {
 
