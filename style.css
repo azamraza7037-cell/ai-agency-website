@@ -1707,3 +1707,44 @@ nav a:hover {
     font-size: 15px;
 
 }
+/* FAQ Accordion */
+
+.faq-question {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+
+}
+
+
+.faq-question span {
+
+    font-size: 28px;
+
+}
+
+
+.faq-answer {
+
+    display: none;
+
+    margin-top: 15px;
+
+}
+
+
+.faq-item.active .faq-answer {
+
+    display: block;
+
+}
+
+
+.faq-item.active .faq-question span {
+
+    transform: rotate(45deg);
+
+}
