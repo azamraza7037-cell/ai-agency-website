@@ -222,6 +222,8 @@ submitButton.textContent = "Send Message";
 });
 // AI Chatbot
 
+// AI Chatbot
+
 const chatToggle = document.getElementById("chat-toggle");
 const chatBox = document.getElementById("chat-box");
 const sendBtn = document.getElementById("send-btn");
@@ -229,17 +231,19 @@ const userMessage = document.getElementById("user-message");
 const chatMessages = document.getElementById("chat-messages");
 
 
-// Open / Close chatbot
+if(chatToggle && chatBox){
 
-chatToggle.addEventListener("click", () => {
+    chatToggle.addEventListener("click", () => {
 
-    if (chatBox.style.display === "block") {
-        chatBox.style.display = "none";
-    } else {
-        chatBox.style.display = "block";
-    }
+        if (chatBox.style.display === "block") {
+            chatBox.style.display = "none";
+        } else {
+            chatBox.style.display = "block";
+        }
 
-});
+    });
+
+}
 
 
 // Send message
