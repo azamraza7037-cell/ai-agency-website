@@ -1749,3 +1749,24 @@ nav a:hover {
     transform: rotate(45deg);
 
 }
+/* Navbar Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: #00d9ff;
+    font-size: 20px;
+}
+
+.logo img {
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+}
