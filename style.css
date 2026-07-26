@@ -1806,3 +1806,195 @@ nav a:hover {
     border-bottom: 1px solid rgba(0,217,255,0.15);
 
 }
+/* ==========================
+   PREMIUM HERO SECTION
+========================== */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    width: 100%;
+}
+
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+
+.hero-text h1 {
+
+    font-size: clamp(40px, 5vw, 72px);
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    background: linear-gradient(
+        90deg,
+        #00d9ff,
+        #38bdf8
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+.hero-text p {
+
+    margin-top: 25px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #cbd5e1;
+
+}
+
+
+.hero-buttons {
+
+    margin-top: 35px;
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.hero-buttons a {
+
+    padding: 14px 28px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+
+.hero-buttons a:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+
+/* Hero Image */
+
+.hero-image {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+.hero-image img {
+
+    width: min(450px, 90%);
+
+    filter: drop-shadow(0 0 35px #00d9ff);
+
+    animation: floatAI 4s ease-in-out infinite;
+
+}
+
+
+
+@keyframes floatAI {
+
+    0%,100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-20px);
+
+    }
+
+}
+
+
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+
+.hero {
+
+    padding:60px 5%;
+
+}
+
+
+.hero-content {
+
+    flex-direction: column;
+
+    text-align:center;
+
+}
+
+
+.hero-text h1 {
+
+    font-size:42px;
+
+}
+
+
+.hero-text p {
+
+    font-size:16px;
+
+}
+
+
+.hero-buttons {
+
+    justify-content:center;
+
+}
+
+
+.hero-image img {
+
+    width:80%;
+
+}
+
+
+}
