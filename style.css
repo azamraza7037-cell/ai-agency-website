@@ -3501,3 +3501,43 @@ padding:25px;
 
 
 }
+/* ===== Premium WhatsApp Button ===== */
+
+.whatsapp-btn{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 65px;
+    height: 65px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    box-shadow: 0 10px 30px rgba(37,211,102,.45);
+    z-index: 9999;
+    transition: all .35s ease;
+    animation: whatsappPulse 2s infinite;
+}
+
+.whatsapp-btn:hover{
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 18px 40px rgba(37,211,102,.65);
+}
+
+@keyframes whatsappPulse{
+    0%{
+        box-shadow:0 0 0 0 rgba(37,211,102,.55);
+    }
+
+    70%{
+        box-shadow:0 0 0 18px rgba(37,211,102,0);
+    }
+
+    100%{
+        box-shadow:0 0 0 0 rgba(37,211,102,0);
+    }
+}
