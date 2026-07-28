@@ -1852,3 +1852,31 @@ header{
     transform:translateY(0);
 
 }
+/* ==================================
+   SCROLL PROGRESS BAR
+================================== */
+
+.scroll-progress{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:0%;
+
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #00d4ff,
+        #0099ff,
+        #6c63ff
+    );
+
+    z-index:9999;
+
+    transition:width .1s linear;
+
+}
