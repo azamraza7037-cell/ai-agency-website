@@ -211,5 +211,32 @@ document.addEventListener("DOMContentLoaded", () => {
         counterObserver.observe(counter);
 
     });
+    /* ==========================
+       MAGNETIC BUTTON EFFECT
+    ========================== */
 
+    const magneticButtons = document.querySelectorAll(".btn");
+
+    magneticButtons.forEach(button => {
+
+        button.addEventListener("mousemove", (e) => {
+
+            const rect = button.getBoundingClientRect();
+
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            button.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+
+        });
+
+        button.addEventListener("mouseleave", () => {
+
+            button.style.transform = "translate(0, 0)";
+
+        });
+
+    });
+
+    console.log("✅ PART 6 Loaded Successfully");
     console.log("✅ PART 5 Loaded Successfully");
