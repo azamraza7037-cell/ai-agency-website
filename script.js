@@ -518,7 +518,43 @@ if(contactTrack){
 
 
 }
+/* ==========================
+   PART 16 : DARK MODE ENGINE
+========================== */
 
+const themeToggle = document.querySelector("#theme-toggle");
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme) {
+    document.body.classList.toggle(
+        "dark-theme",
+        savedTheme === "dark"
+    );
+} else if (
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+) {
+    document.body.classList.add("dark-theme");
+}
+
+if (themeToggle) {
+
+    themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark-theme");
+
+        localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark-theme")
+                ? "dark"
+                : "light"
+        );
+
+    });
+
+}
+
+console.log("✅ PART 16 Loaded");
 /* ==========================
    PART 14 : BUTTON RIPPLE
 ========================== */
