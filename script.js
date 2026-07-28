@@ -237,6 +237,33 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
+    /* ==========================
+       SCROLL PROGRESS BAR
+    ========================== */
 
+    const progressBar = document.querySelector(".scroll-progress");
+
+    const updateProgressBar = () => {
+
+        const scrollTop = window.scrollY;
+
+        const pageHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+
+        const progress = (scrollTop / pageHeight) * 100;
+
+        if (progressBar) {
+
+            progressBar.style.width = `${progress}%`;
+
+        }
+
+    };
+
+    window.addEventListener("scroll", updateProgressBar);
+
+    updateProgressBar();
+
+    console.log("✅ PART 7 Loaded Successfully");
     console.log("✅ PART 6 Loaded Successfully");
     console.log("✅ PART 5 Loaded Successfully");
