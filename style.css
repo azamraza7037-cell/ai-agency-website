@@ -1880,3 +1880,154 @@ header{
     transition:width .1s linear;
 
 }
+/* ==========================
+   PART 13 : PREMIUM UI ENGINE
+========================== */
+
+/* Glass Effect */
+
+.glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.15);
+}
+
+/* Premium Buttons */
+
+.btn{
+    transition: all .35s ease;
+}
+
+.btn:hover{
+    transform: translateY(-4px);
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+/* Smooth Cards */
+
+.service-card,
+.card,
+.feature-card{
+    transition:.35s ease;
+}
+
+.service-card:hover,
+.card:hover,
+.feature-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+/* Premium Gradient Text */
+
+.gradient-text{
+    background:linear-gradient(90deg,#4f46e5,#06b6d4);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+/* Smooth Image Zoom */
+
+img{
+    transition:.4s ease;
+}
+
+img:hover{
+    transform:scale(1.03);
+}
+
+/* Better Mobile */
+
+@media(max-width:768px){
+
+    .glass{
+        border-radius:16px;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+}
+/* ==========================
+   PART 14 : PREMIUM ANIMATIONS
+========================== */
+
+/* Global Smooth Scroll */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* Fade Up Animation */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.fade-up{
+    animation:fadeUp .8s ease both;
+}
+
+/* Button Ripple Base */
+
+.btn{
+    position:relative;
+    overflow:hidden;
+}
+
+/* Better Focus Visibility */
+
+.btn:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+    outline:3px solid #06b6d4;
+    outline-offset:3px;
+}
+
+/* Respect Reduced Motion */
+
+@media (prefers-reduced-motion: reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto !important;
+    }
+
+}
+.ripple{
+    position:absolute;
+    width:12px;
+    height:12px;
+    background:rgba(255,255,255,.6);
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+    animation:ripple .6s ease-out;
+    pointer-events:none;
+}
+
+@keyframes ripple{
+    from{
+        transform:translate(-50%,-50%) scale(0);
+        opacity:1;
+    }
+    to{
+        transform:translate(-50%,-50%) scale(18);
+        opacity:0;
+    }
+}
