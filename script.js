@@ -181,7 +181,122 @@ const updateActiveNav = () => {
 
 updateActiveNav();
 
+/* ==========================
+   PART 6 : SCROLL REVEAL ENGINE
+========================== */
 
+const revealElements = document.querySelectorAll(
+    ".hero-content, .hero-image, .service-card, .project-card, .about-content, .contact-box"
+);
+
+
+const revealOnScroll = () => {
+
+    const triggerPoint = window.innerHeight - 100;
+
+
+    revealElements.forEach(element => {
+
+        const elementTop = element.getBoundingClientRect().top;
+
+
+        if(elementTop < triggerPoint){
+
+            element.classList.add("show");
+
+        }
+
+    });
+
+};
+
+
+revealOnScroll();
+
+/* ==========================
+   PART 7 : COUNTER ANIMATION ENGINE
+========================== */
+
+const startCounters = () => {
+
+    counters.forEach(counter => {
+
+        counter.innerText = "0";
+
+        const target = Number(
+            counter.getAttribute("data-target")
+        );
+
+
+        const updateCounter = () => {
+
+            const current = Number(counter.innerText);
+
+
+            const increment = Math.ceil(
+                target / 100
+            );
+
+
+            if(current < target){
+
+                counter.innerText = current + increment;
+
+                setTimeout(updateCounter, 30);
+
+            } 
+            else {
+
+                counter.innerText = target;
+
+            }
+
+        };
+
+
+        updateCounter();
+
+    });
+
+};
+
+
+let counterStarted = false;
+
+
+const checkCounters = () => {
+
+    if(!counters.length) return;
+
+
+    const counterSection = document.querySelector(".counter-section");
+
+
+    if(!counterSection) return;
+
+
+    const sectionTop = counterSection.getBoundingClientRect().top;
+
+
+    if(
+        sectionTop < window.innerHeight - 100 &&
+        !counterStarted
+    ){
+
+        startCounters();
+
+        counterStarted = true;
+
+    }
+
+};
+
+
+checkCounters();
+
+
+console.log("✅ PART 7 Loaded");
+console.log("✅ PART 6 Loaded");
 console.log("✅ PART 5 Loaded");
     console.log("✅ PART 4 Loaded");
     console.log("✅ PART 3 Loaded");
