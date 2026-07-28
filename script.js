@@ -327,7 +327,81 @@ window.addEventListener("scroll", () => {
 
 });
 
+/* ==========================
+   PART 9 : EMAILJS CONTACT ENGINE
+========================== */
 
+
+const contactForm = document.querySelector("#contact-form");
+
+
+if(contactForm){
+
+
+    contactForm.addEventListener("submit", function(e){
+
+
+        e.preventDefault();
+
+
+        emailjs.sendForm(
+
+            "YOUR_SERVICE_ID",
+
+            "YOUR_TEMPLATE_ID",
+
+            this
+
+        )
+
+        .then(() => {
+
+
+            alert("✅ Message sent successfully!");
+
+            contactForm.reset();
+
+
+        })
+
+        .catch((error) => {
+
+
+            console.log(
+                "EmailJS Error:",
+                error
+            );
+
+
+            alert(
+                "❌ Message failed. Please try again."
+            );
+
+
+        });
+
+
+    });
+
+
+}
+
+/* ==========================
+   PART 10 : PAGE LOAD ENGINE
+========================== */
+
+
+window.addEventListener("load", () => {
+
+
+    document.body.classList.add("loaded");
+
+
+    console.log("✅ PAGE LOADED");
+
+
+});
+console.log("✅ PART 9 Loaded");
 console.log("✅ PART 8 Loaded");
 console.log("✅ PART 7 Loaded");
 console.log("✅ PART 6 Loaded");
