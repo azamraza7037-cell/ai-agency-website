@@ -2149,3 +2149,55 @@ li{
 .dark-theme img{
     filter:brightness(.95);
 }
+/* ==========================
+   PART 17 : PAGE LOADER
+========================== */
+
+#page-loader{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--bg);
+    z-index:9999;
+    opacity:1;
+    visibility:visible;
+    transition:
+        opacity .5s ease,
+        visibility .5s ease;
+}
+
+#page-loader.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.loader-spinner{
+    width:60px;
+    height:60px;
+    border:5px solid rgba(6,182,212,.2);
+    border-top-color:var(--primary);
+    border-radius:50%;
+    animation:loaderSpin .8s linear infinite;
+}
+
+@keyframes loaderSpin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+body{
+    animation:pageFade .5s ease;
+}
+
+@keyframes pageFade{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
