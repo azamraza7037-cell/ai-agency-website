@@ -553,7 +553,29 @@ if (themeToggle) {
     });
 
 }
+/* ==========================
+   PART 17 : PAGE LOADER ENGINE
+========================== */
 
+window.addEventListener("load", () => {
+
+    const loader = document.querySelector("#page-loader");
+
+    if(loader){
+
+        loader.classList.add("hide");
+
+        setTimeout(() => {
+
+            loader.remove();
+
+        }, 500);
+
+    }
+
+});
+
+console.log("✅ PART 17 Loaded");
 console.log("✅ PART 16 Loaded");
 /* ==========================
    PART 14 : BUTTON RIPPLE
