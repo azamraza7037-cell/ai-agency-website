@@ -400,7 +400,133 @@ window.addEventListener("load", () => {
     console.log("✅ PAGE LOADED");
 
 
+});/* ==========================
+   PART 11 : MOBILE PERFORMANCE + ERROR PROTECTION
+========================== */
+
+
+window.addEventListener("error", (error) => {
+
+
+    console.warn(
+        "⚠️ JS Warning:",
+        error.message
+    );
+
+
 });
+
+
+const optimizeMobile = () => {
+
+
+    const isMobile = window.innerWidth <= 768;
+
+
+    if(isMobile){
+
+
+        document.body.classList.add(
+            "mobile-device"
+        );
+
+
+        console.log(
+            "📱 Mobile Optimization Enabled"
+        );
+
+
+    }
+
+
+};
+
+
+optimizeMobile();
+
+
+window.addEventListener(
+    "resize",
+    optimizeMobile
+);
+/* ==========================
+   PART 12 : ANALYTICS + PRODUCTION TRACKING
+========================== */
+
+
+const trackEvent = (eventName, data = {}) => {
+
+
+    console.log(
+        "📊 Event:",
+        eventName,
+        data
+    );
+
+
+};
+
+
+const buttonsTrack = document.querySelectorAll(
+    ".btn"
+);
+
+
+buttonsTrack.forEach(button => {
+
+
+    button.addEventListener(
+        "click",
+        () => {
+
+
+            trackEvent(
+                "Button Click",
+                {
+                    text: button.innerText
+                }
+            );
+
+
+        }
+    );
+
+
+});
+
+
+const contactTrack = document.querySelector(
+    "#contact-form"
+);
+
+
+if(contactTrack){
+
+
+    contactTrack.addEventListener(
+        "submit",
+        () => {
+
+
+            trackEvent(
+                "Contact Form Submit"
+            );
+
+
+        }
+    );
+
+
+}
+
+
+console.log(
+    "✅ PART 12 Loaded"
+);
+
+console.log(
+    "✅ PART 11 Loaded"
+);
 console.log("✅ PART 9 Loaded");
 console.log("✅ PART 8 Loaded");
 console.log("✅ PART 7 Loaded");
