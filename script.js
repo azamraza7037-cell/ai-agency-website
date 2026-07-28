@@ -294,7 +294,41 @@ const checkCounters = () => {
 
 checkCounters();
 
+/* ==========================
+   PART 8 : MASTER SCROLL CONTROLLER
+========================== */
 
+
+window.addEventListener("scroll", () => {
+
+    if(!ticking){
+
+        window.requestAnimationFrame(() => {
+
+
+            updateNavbar();
+
+            updateActiveNav();
+
+            revealOnScroll();
+
+            checkCounters();
+
+
+            ticking = false;
+
+
+        });
+
+
+        ticking = true;
+
+    }
+
+});
+
+
+console.log("✅ PART 8 Loaded");
 console.log("✅ PART 7 Loaded");
 console.log("✅ PART 6 Loaded");
 console.log("✅ PART 5 Loaded");
