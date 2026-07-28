@@ -322,7 +322,17 @@ header{
 /* ==========================
    NAVBAR
 ========================== */
+.navbar.scrolled{
 
+    background: rgba(10,10,25,0.95);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 10px 30px rgba(0,140,255,0.18);
+
+    transition: all 0.3s ease;
+
+}
 
 .navbar{
 
@@ -1816,3 +1826,29 @@ header{
 /* ==================================================
    END OF AZAM AI FINAL CSS
 ================================================== */
+/* ==========================
+   SCROLL REVEAL
+========================== */
+
+.service-card,
+.project-card,
+.about-content,
+.contact-container{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
