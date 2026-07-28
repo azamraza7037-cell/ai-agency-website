@@ -2031,3 +2031,121 @@ textarea:focus-visible{
         opacity:0;
     }
 }
+/* ==========================
+   PART 15 : FINAL UI POLISH
+========================== */
+
+/* Better Rendering */
+
+html{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+/* Images */
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Sections */
+
+section{
+    padding: 80px 0;
+}
+
+/* Better Container */
+
+.container{
+    width: min(1200px, 92%);
+    margin-inline: auto;
+}
+
+/* Selection Color */
+
+::selection{
+    background: #06b6d4;
+    color: #fff;
+}
+
+/* Smooth Hover */
+
+a,
+button{
+    transition:
+        color .3s ease,
+        background-color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+/* Performance */
+
+*{
+    box-sizing: border-box;
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    section{
+        padding:60px 0;
+    }
+
+}
+/* ==========================
+   PART 16 : DARK MODE
+========================== */
+
+:root{
+    --bg:#ffffff;
+    --surface:#f8fafc;
+    --text:#111827;
+    --text-light:#6b7280;
+    --primary:#06b6d4;
+    --border:#e5e7eb;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    transition:
+        background-color .35s ease,
+        color .35s ease;
+}
+
+.dark-theme{
+    --bg:#0f172a;
+    --surface:#1e293b;
+    --text:#f8fafc;
+    --text-light:#cbd5e1;
+    --primary:#22d3ee;
+    --border:#334155;
+}
+
+.card,
+.service-card,
+.project-card,
+.glass-card{
+    background:var(--surface);
+    color:var(--text);
+    border:1px solid var(--border);
+}
+
+p,
+span,
+li{
+    color:var(--text-light);
+}
+
+.dark-theme img{
+    filter:brightness(.95);
+}
