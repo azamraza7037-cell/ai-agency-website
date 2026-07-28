@@ -154,4 +154,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
     revealOnScroll();
 
-    console.log("✅ PART 4 Loaded Successfully");
+    console.log("✅ PART 4 Loaded Successfully");    /* ==========================
+       PROFESSIONAL COUNTER
+    ========================== */
+
+    const counters = document.querySelectorAll(".counter");
+
+    const startCounter = (counter) => {
+
+        const target = Number(counter.dataset.target);
+        let current = 0;
+
+        const increment = Math.ceil(target / 100);
+
+        const updateCounter = () => {
+
+            current += increment;
+
+            if (current >= target) {
+
+                counter.textContent = target + "+";
+                return;
+
+            }
+
+            counter.textContent = current + "+";
+
+            requestAnimationFrame(updateCounter);
+
+        };
+
+        updateCounter();
+
+    };
+
+    const counterObserver = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                startCounter(entry.target);
+
+                counterObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.5
+    });
+
+    counters.forEach(counter => {
+
+        counterObserver.observe(counter);
+
+    });
+
+    console.log("✅ PART 5 Loaded Successfully");
