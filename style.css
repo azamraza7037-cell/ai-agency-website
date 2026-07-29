@@ -2744,3 +2744,74 @@ left .08s linear,
 top .08s linear;
 
 }
+/* ==========================================
+   HERO STATS
+========================================== */
+
+.hero-stats{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+margin:45px 0;
+
+}
+
+.stat{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:18px;
+
+padding:22px;
+
+text-align:center;
+
+transition:.35s;
+
+}
+
+.stat:hover{
+
+transform:translateY(-8px);
+
+border-color:#00E5FF;
+
+box-shadow:0 15px 35px rgba(0,229,255,.20);
+
+}
+
+.stat h2{
+
+font-size:32px;
+
+color:#00E5FF;
+
+margin-bottom:8px;
+
+}
+
+.stat p{
+
+color:#cbd5e1;
+
+font-size:15px;
+
+}
+
+@media(max-width:900px){
+
+.hero-stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
