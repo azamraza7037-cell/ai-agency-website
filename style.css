@@ -2815,3 +2815,86 @@ grid-template-columns:repeat(2,1fr);
 }
 
 }
+/* ==========================================
+   TRUSTED SECTION
+========================================== */
+
+.trusted{
+
+padding:70px 0;
+
+overflow:hidden;
+
+}
+
+.trusted-title{
+
+text-align:center;
+
+font-size:14px;
+
+letter-spacing:4px;
+
+color:#8fa6c9;
+
+margin-bottom:35px;
+
+}
+
+.logo-slider{
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.logo-track{
+
+display:flex;
+
+gap:80px;
+
+width:max-content;
+
+animation:marquee 24s linear infinite;
+
+}
+
+.logo-track span{
+
+font-size:22px;
+
+font-weight:700;
+
+color:#d8e6ff;
+
+opacity:.75;
+
+transition:.3s;
+
+white-space:nowrap;
+
+}
+
+.logo-track span:hover{
+
+opacity:1;
+
+color:#00E5FF;
+
+transform:scale(1.08);
+
+}
+
+@keyframes marquee{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
