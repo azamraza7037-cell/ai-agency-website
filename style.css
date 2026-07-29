@@ -2016,3 +2016,67 @@ backdrop-filter:blur(20px);
 background:rgba(5,10,25,.80);
 
 }
+/*=========================================
+        FAQ ACCORDION
+=========================================*/
+
+.faq-answer{
+
+max-height:0;
+
+overflow:hidden;
+
+transition:.4s;
+
+opacity:0;
+
+}
+
+.faq-item.active .faq-answer{
+
+max-height:250px;
+
+opacity:1;
+
+margin-top:15px;
+
+}
+
+.faq-question{
+
+cursor:pointer;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+
+/*=========================================
+      SCROLL REVEAL
+=========================================*/
+
+.service-card,
+.project-card,
+.about-card,
+.testimonial-card,
+.tech-card{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:all .8s ease;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
