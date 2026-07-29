@@ -2327,3 +2327,84 @@ transform:translateY(0);
 }
 
 }
+/* =====================================================
+   PREMIUM AI BACKGROUND
+===================================================== */
+
+body{
+
+    background:#060816;
+
+    color:#ffffff;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+}
+
+/* Floating Blur */
+
+.bg-blur{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    z-index:-3;
+
+    opacity:.35;
+
+}
+
+.blur1{
+
+    width:420px;
+
+    height:420px;
+
+    background:#00d4ff;
+
+    top:-120px;
+
+    left:-120px;
+
+}
+
+.blur2{
+
+    width:450px;
+
+    height:450px;
+
+    background:#7b2cff;
+
+    right:-120px;
+
+    bottom:-120px;
+
+}
+
+/* Grid */
+
+.bg-grid{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-4;
+
+    background-image:
+
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+
+    background-size:40px 40px;
+
+    mask-image:radial-gradient(circle, black 40%, transparent 100%);
+
+}
