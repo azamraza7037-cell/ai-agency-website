@@ -2981,3 +2981,66 @@ grid-row:auto;
 }
 
 }
+/* ==========================================
+   AI DASHBOARD
+========================================== */
+
+.ai-dashboard{
+    padding:120px 0;
+}
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:25px;
+    margin-top:60px;
+}
+
+.dashboard-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border-radius:24px;
+    padding:35px;
+    transition:.35s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-10px);
+    border-color:#00E5FF;
+    box-shadow:0 25px 60px rgba(0,229,255,.20);
+}
+
+.dashboard-card.large{
+    grid-row:span 2;
+}
+
+.status{
+    display:inline-block;
+    padding:8px 16px;
+    border-radius:30px;
+    background:#00E5FF;
+    color:#05101b;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.dashboard-card h1{
+    font-size:52px;
+    color:#00E5FF;
+    margin:20px 0;
+}
+
+.dashboard-card p{
+    color:#b8c5d6;
+}
+
+@media(max-width:992px){
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard-card.large{
+        grid-row:auto;
+    }
+}
