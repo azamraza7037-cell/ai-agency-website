@@ -1,174 +1,242 @@
-/* ==================================================
-   AZAM AI - PROFESSIONAL SCRIPT V3
-   PART 1 : SAFE INITIALIZATION
-================================================== */
+/*=========================================
+    AZAM AI - Premium Script
+=========================================*/
 
-document.addEventListener("DOMContentLoaded", () => {
+"use strict";
 
-    "use strict";
+/*=========================================
+    AOS INITIALIZATION
+=========================================*/
 
-    /* ==========================
-       GLOBAL ELEMENTS
-    ========================== */
+AOS.init({
+    duration: 1000,
+    once: true,
+    offset: 100,
+    easing: "ease-in-out"
+});
 
-    const navbar = document.querySelector(".navbar");
-    const menuBtn = document.querySelector(".menu-btn");
-    const navLinks = document.querySelector(".nav-links");
+/*=========================================
+    PARTICLES JS
+=========================================*/
 
-    const hero = document.querySelector(".hero");
-    const heroContent = document.querySelector(".hero-content");
-    const heroImage = document.querySelector(".hero-image");
+particlesJS("particles-js", {
 
-    const sections = document.querySelectorAll("section[id]");
-    const buttons = document.querySelectorAll(".btn");
-    const counters = document.querySelectorAll(".counter");
-    const images = document.querySelectorAll("img");
+    particles: {
 
-    let lastScroll = 0;
-    let ticking = false;
-    /* ==========================
-       PART 2 : MOBILE MENU ENGINE
-    ========================== */
-
-    if (menuBtn && navLinks) {
-
-        const toggleMenu = () => {
-            navLinks.classList.toggle("active");
-            menuBtn.classList.toggle("active");
-        };
-
-        const closeMenu = () => {
-            navLinks.classList.remove("active");
-            menuBtn.classList.remove("active");
-        };
-
-        menuBtn.addEventListener("click", toggleMenu);
-
-        navLinks.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", closeMenu);
-        });
-
-        document.addEventListener("click", (event) => {
-
-            const isMenuClick = menuBtn.contains(event.target);
-            const isNavClick = navLinks.contains(event.target);
-
-            if (!isMenuClick && !isNavClick) {
-                closeMenu();
+        number: {
+            value: 70,
+            density: {
+                enable: true,
+                value_area: 800
             }
+        },
 
-        });
+        color: {
+            value: "#00d4ff"
+        },
 
-    }
-       /* ==========================
-       PART 3 : PREMIUM NAVBAR ENGINE
-    ========================== */
+        shape: {
+            type: "circle"
+        },
 
-    const updateNavbar = () => {
+        opacity: {
+            value: 0.4
+        },
 
-        if (!navbar) return;
+        size: {
+            value: 3,
+            random: true
+        },
 
-        // Sticky Background
-        if (window.scrollY > 50) {
-            navbar.classList.add("scrolled");
-        } else {
-            navbar.classList.remove("scrolled");
-        }
+        line_linked: {
 
-        // Hide / Show Navbar
-        if (window.scrollY > 120) {
+            enable: true,
 
-            if (window.scrollY > lastScroll) {
-                navbar.classList.add("hide");
-            } else {
-                navbar.classList.remove("hide");
-            }
+            distance: 150,
 
-        } else {
+            color: "#00d4ff",
 
-            navbar.classList.remove("hide");
+            opacity: 0.2,
+
+            width: 1
+
+        },
+
+        move: {
+
+            enable: true,
+
+            speed: 2
 
         }
 
-        lastScroll = window.scrollY;
+    },
 
-    };
+    interactivity: {
 
-    updateNavbar();
-    /* ==========================
-       PART 4 : SMOOTH SCROLL ENGINE
-    ========================== */
+        detect_on: "canvas",
 
-    const navItems = document.querySelectorAll(".nav-links a");
+        events: {
 
-    if (navItems.length > 0) {
+            onhover: {
+                enable: true,
+                mode: "grab"
+            },
 
-        navItems.forEach(link => {
+            onclick: {
+                enable: true,
+                mode: "push"
+            }
 
-            link.addEventListener("click", (e) => {
+        },
 
-                const targetId = link.getAttribute("href");
+        modes: {
 
-                if (targetId && targetId.startsWith("#")) {
+            grab: {
 
-                    const targetSection = document.querySelector(targetId);
+                distance: 160,
 
-                    if (targetSection) {
-
-                        e.preventDefault();
-
-                        targetSection.scrollIntoView({
-
-                            behavior: "smooth",
-
-                            block: "start"
-
-                        });
-
-                    }
-
+                line_linked: {
+                    opacity: 0.6
                 }
 
-            });
+            },
 
-        });
+            push: {
+                particles_nb: 4
+            }
+
+        }
+
+    },
+
+    retina_detect: true
+
+});
+
+/*=========================================
+      HERO TYPING EFFECT
+=========================================*/
+
+const typingElement = document.getElementById("typing");
+
+const words = [
+
+    "AI Chatbots",
+
+    "AI Automation",
+
+    "Premium Websites",
+
+    "Business Solutions",
+
+    "AI Agents"
+
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typingEffect() {
+
+    if (!typingElement) return;
+
+    const currentWord = words[wordIndex];
+
+    if (!deleting) {
+
+        typingElement.textContent =
+            currentWord.substring(0, charIndex++);
+
+        if (charIndex > currentWord.length) {
+
+            deleting = true;
+
+            setTimeout(typingEffect, 1500);
+
+            return;
+
+        }
+
+    } else {
+
+        typingElement.textContent =
+            currentWord.substring(0, charIndex--);
+
+        if (charIndex < 0) {
+
+            deleting = false;
+
+            wordIndex++;
+
+            if (wordIndex >= words.length)
+                wordIndex = 0;
+
+        }
 
     }
-/* ==========================
-   PART 5 : ACTIVE NAVIGATION ENGINE
-========================== */
 
-const sectionsList = document.querySelectorAll("section[id]");
-const navLinksList = document.querySelectorAll(".nav-links a");
+    setTimeout(
+        typingEffect,
+        deleting ? 45 : 90
+    );
+
+}
+
+typingEffect();
+/*=========================================
+        STICKY NAVBAR
+=========================================*/
+
+const header = document.querySelector(".hero");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+
+        header.classList.add("sticky");
+
+    } else {
+
+        header.classList.remove("sticky");
+
+    }
+
+});
 
 
-const updateActiveNav = () => {
+/*=========================================
+      ACTIVE NAVIGATION LINK
+=========================================*/
 
-    let currentSection = "";
+const sections = document.querySelectorAll("section");
 
-    sectionsList.forEach(section => {
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
 
         const sectionTop = section.offsetTop - 150;
+
         const sectionHeight = section.offsetHeight;
 
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-        ) {
+        if (pageYOffset >= sectionTop) {
 
-            currentSection = section.getAttribute("id");
+            current = section.getAttribute("id");
 
         }
 
     });
 
-
-    navLinksList.forEach(link => {
+    navLinks.forEach(link => {
 
         link.classList.remove("active");
 
-
-        if(link.getAttribute("href") === "#" + currentSection){
+        if (link.getAttribute("href") === "#" + current) {
 
             link.classList.add("active");
 
@@ -176,448 +244,77 @@ const updateActiveNav = () => {
 
     });
 
-};
-
-
-updateActiveNav();
-
-/* ==========================
-   PART 6 : SCROLL REVEAL ENGINE
-========================== */
-
-const revealElements = document.querySelectorAll(
-    ".hero-content, .hero-image, .service-card, .project-card, .about-content, .contact-box"
-);
-
-
-const revealOnScroll = () => {
-
-    const triggerPoint = window.innerHeight - 100;
-
-
-    revealElements.forEach(element => {
-
-        const elementTop = element.getBoundingClientRect().top;
-
-
-        if(elementTop < triggerPoint){
-
-            element.classList.add("show");
-
-        }
-
-    });
-
-};
-
-
-revealOnScroll();
-
-/* ==========================
-   PART 7 : COUNTER ANIMATION ENGINE
-========================== */
-
-const startCounters = () => {
-
-    counters.forEach(counter => {
-
-        counter.innerText = "0";
-
-        const target = Number(
-            counter.getAttribute("data-target")
-        );
-
-
-        const updateCounter = () => {
-
-            const current = Number(counter.innerText);
-
-
-            const increment = Math.ceil(
-                target / 100
-            );
-
-
-            if(current < target){
-
-                counter.innerText = current + increment;
-
-                setTimeout(updateCounter, 30);
-
-            } 
-            else {
-
-                counter.innerText = target;
-
-            }
-
-        };
-
-
-        updateCounter();
-
-    });
-
-};
-
-
-let counterStarted = false;
-
-
-const checkCounters = () => {
-
-    if(!counters.length) return;
-
-
-    const counterSection = document.querySelector(".counter-section");
-
-
-    if(!counterSection) return;
-
-
-    const sectionTop = counterSection.getBoundingClientRect().top;
-
-
-    if(
-        sectionTop < window.innerHeight - 100 &&
-        !counterStarted
-    ){
-
-        startCounters();
-
-        counterStarted = true;
-
-    }
-
-};
-
-
-checkCounters();
-
-/* ==========================
-   PART 8 : MASTER SCROLL CONTROLLER
-========================== */
-
-
-window.addEventListener("scroll", () => {
-
-    if(!ticking){
-
-        window.requestAnimationFrame(() => {
-
-
-            updateNavbar();
-
-            updateActiveNav();
-
-            revealOnScroll();
-
-            checkCounters();
-
-
-            ticking = false;
-
-
-        });
-
-
-        ticking = true;
-
-    }
-
 });
 
-/* ==========================
-   PART 9 : EMAILJS CONTACT ENGINE
-========================== */
 
+/*=========================================
+        SMOOTH SCROLL
+=========================================*/
 
-const contactForm = document.querySelector("#contact-form");
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-
-if(contactForm){
-
-
-    contactForm.addEventListener("submit", function(e){
-
+    anchor.addEventListener("click", function (e) {
 
         e.preventDefault();
 
+        const target = document.querySelector(this.getAttribute("href"));
 
-        emailjs.sendForm(
+        if (target) {
 
-            "YOUR_SERVICE_ID",
+            target.scrollIntoView({
 
-            "YOUR_TEMPLATE_ID",
+                behavior: "smooth",
 
-            this
+                block: "start"
 
-        )
-
-        .then(() => {
-
-
-            alert("✅ Message sent successfully!");
-
-            contactForm.reset();
-
-
-        })
-
-        .catch((error) => {
-
-
-            console.log(
-                "EmailJS Error:",
-                error
-            );
-
-
-            alert(
-                "❌ Message failed. Please try again."
-            );
-
-
-        });
-
-
-    });
-
-
-}
-
-/* ==========================
-   PART 10 : PAGE LOAD ENGINE
-========================== */
-
-
-window.addEventListener("load", () => {
-
-
-    document.body.classList.add("loaded");
-
-
-    console.log("✅ PAGE LOADED");
-
-
-});/* ==========================
-   PART 11 : MOBILE PERFORMANCE + ERROR PROTECTION
-========================== */
-
-
-window.addEventListener("error", (error) => {
-
-
-    console.warn(
-        "⚠️ JS Warning:",
-        error.message
-    );
-
-
-});
-
-
-const optimizeMobile = () => {
-
-
-    const isMobile = window.innerWidth <= 768;
-
-
-    if(isMobile){
-
-
-        document.body.classList.add(
-            "mobile-device"
-        );
-
-
-        console.log(
-            "📱 Mobile Optimization Enabled"
-        );
-
-
-    }
-
-
-};
-
-
-optimizeMobile();
-
-
-window.addEventListener(
-    "resize",
-    optimizeMobile
-);
-/* ==========================
-   PART 12 : ANALYTICS + PRODUCTION TRACKING
-========================== */
-
-
-const trackEvent = (eventName, data = {}) => {
-
-
-    console.log(
-        "📊 Event:",
-        eventName,
-        data
-    );
-
-
-};
-
-
-const buttonsTrack = document.querySelectorAll(
-    ".btn"
-);
-
-
-buttonsTrack.forEach(button => {
-
-
-    button.addEventListener(
-        "click",
-        () => {
-
-
-            trackEvent(
-                "Button Click",
-                {
-                    text: button.innerText
-                }
-            );
-
+            });
 
         }
-    );
 
+    });
 
 });
 
 
-const contactTrack = document.querySelector(
-    "#contact-form"
-);
+/*=========================================
+      SCROLL PROGRESS BAR
+=========================================*/
+
+const progressBar = document.createElement("div");
+
+progressBar.id = "scroll-progress";
+
+document.body.appendChild(progressBar);
+
+window.addEventListener("scroll", () => {
+
+    const totalHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const progress =
+        (window.pageYOffset / totalHeight) * 100;
+
+    progressBar.style.width = progress + "%";
+
+});
 
 
-if(contactTrack){
+/*=========================================
+     NAVBAR SHADOW ON SCROLL
+=========================================*/
 
+window.addEventListener("scroll", () => {
 
-    contactTrack.addEventListener(
-        "submit",
-        () => {
+    if (window.scrollY > 80) {
 
+        header.style.boxShadow =
+            "0 10px 30px rgba(0,0,0,.35)";
 
-            trackEvent(
-                "Contact Form Submit"
-            );
+    } else {
 
-
-        }
-    );
-
-
-}
-/* ==========================
-   PART 16 : DARK MODE ENGINE
-========================== */
-
-const themeToggle = document.querySelector("#theme-toggle");
-
-const savedTheme = localStorage.getItem("theme");
-
-if (savedTheme) {
-    document.body.classList.toggle(
-        "dark-theme",
-        savedTheme === "dark"
-    );
-} else if (
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-) {
-    document.body.classList.add("dark-theme");
-}
-
-if (themeToggle) {
-
-    themeToggle.addEventListener("click", () => {
-
-        document.body.classList.toggle("dark-theme");
-
-        localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark-theme")
-                ? "dark"
-                : "light"
-        );
-
-    });
-
-}
-/* ==========================
-   PART 17 : PAGE LOADER ENGINE
-========================== */
-
-window.addEventListener("load", () => {
-
-    const loader = document.querySelector("#page-loader");
-
-    if(loader){
-
-        loader.classList.add("hide");
-
-        setTimeout(() => {
-
-            loader.remove();
-
-        }, 500);
+        header.style.boxShadow = "none";
 
     }
-
-});
-
-console.log("✅ PART 17 Loaded");
-console.log("✅ PART 16 Loaded");
-/* ==========================
-   PART 14 : BUTTON RIPPLE
-========================== */
-
-document.querySelectorAll(".btn").forEach(button => {
-
-    button.addEventListener("click", function(e){
-
-        const ripple = document.createElement("span");
-
-        const rect = this.getBoundingClientRect();
-
-        ripple.className = "ripple";
-
-        ripple.style.left = (e.clientX - rect.left) + "px";
-        ripple.style.top = (e.clientY - rect.top) + "px";
-
-        this.appendChild(ripple);
-
-        setTimeout(() => ripple.remove(), 600);
-
-    });
-
-});
-
-console.log("✅ PART 14 Loaded");
-console.log(
-    "✅ PART 12 Loaded"
-);
-
-console.log(
-    "✅ PART 11 Loaded"
-);
-console.log("✅ PART 9 Loaded");
-console.log("✅ PART 8 Loaded");
-console.log("✅ PART 7 Loaded");
-console.log("✅ PART 6 Loaded");
-console.log("✅ PART 5 Loaded");
-    console.log("✅ PART 4 Loaded");
-    console.log("✅ PART 3 Loaded");
-    console.log("✅ PART 2 Loaded");
-    console.log("✅ PART 1 Loaded");
 
 });
