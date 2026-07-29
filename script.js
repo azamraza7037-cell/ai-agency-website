@@ -733,3 +733,173 @@ hero.style.transform=
 `translate(${x}px,${y}px)`;
 
 });
+/*=========================================
+        EMAILJS CONTACT FORM
+=========================================*/
+
+const contactForm = document.getElementById("contact-form");
+
+if(contactForm){
+
+contactForm.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const status=document.getElementById("form-status");
+
+status.innerHTML="Sending...";
+
+emailjs.sendForm(
+
+"default_service",
+
+"YOUR_TEMPLATE_ID",
+
+this
+
+).then(()=>{
+
+status.innerHTML="✅ Message Sent Successfully!";
+
+this.reset();
+
+}).catch(()=>{
+
+status.innerHTML="❌ Failed to send message.";
+
+});
+
+});
+
+}
+
+
+/*=========================================
+        SIMPLE AI CHATBOT
+=========================================*/
+
+const sendBtn=document.getElementById("send-btn");
+const userInput=document.getElementById("user-message");
+const chatMessages=document.getElementById("chat-messages");
+
+if(sendBtn){
+
+sendBtn.addEventListener("click",sendMessage);
+
+userInput.addEventListener("keypress",(e)=>{
+
+if(e.key==="Enter"){
+
+sendMessage();
+
+}
+
+});
+
+}
+
+function sendMessage(){
+
+const text=userInput.value.trim();
+
+if(text==="") return;
+
+chatMessages.innerHTML+=`
+
+<div class="user-msg">${text}</div>
+
+`;
+
+let reply="";
+
+const msg=text.toLowerCase();
+
+if(msg.includes("price")||msg.includes("cost")){
+
+reply="Our pricing depends on project requirements. Contact us for a custom quote.";
+
+}
+
+else if(msg.includes("website")){
+
+reply="We build premium AI-powered business websites.";
+
+}
+
+else if(msg.includes("chatbot")){
+
+reply="We create intelligent AI chatbots for businesses.";
+
+}
+
+else if(msg.includes("automation")){
+
+reply="AI Automation helps businesses save time and increase productivity.";
+
+}
+
+else{
+
+reply="Thanks for your message. Please use the contact form for detailed discussion.";
+
+}
+
+setTimeout(()=>{
+
+chatMessages.innerHTML+=`
+
+<div class="bot-msg">${reply}</div>
+
+`;
+
+chatMessages.scrollTop=
+
+chatMessages.scrollHeight;
+
+},500);
+
+userInput.value="";
+
+}
+
+
+/*=========================================
+      CHAT TOGGLE
+=========================================*/
+
+const toggle=document.getElementById("chat-toggle");
+const chat=document.getElementById("chat-box");
+
+if(toggle){
+
+toggle.addEventListener("click",()=>{
+
+chat.classList.toggle("open");
+
+});
+
+}
+
+
+/*=========================================
+      PERFORMANCE
+=========================================*/
+
+window.addEventListener("load",()=>{
+
+document.body.classList.add("loaded");
+
+});
+
+
+/*=========================================
+        CURRENT YEAR
+=========================================*/
+
+const year=document.getElementById("year");
+
+if(year){
+
+year.textContent=new Date().getFullYear();
+
+}
