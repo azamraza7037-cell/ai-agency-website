@@ -2662,3 +2662,52 @@ color:#00E5FF;
 width:100%;
 
 }
+/* ==========================================
+   AURORA BACKGROUND
+========================================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+
+radial-gradient(circle at 15% 25%,
+rgba(0,229,255,.12),
+transparent 35%),
+
+radial-gradient(circle at 80% 20%,
+rgba(123,47,247,.15),
+transparent 35%),
+
+radial-gradient(circle at 50% 90%,
+rgba(0,255,255,.10),
+transparent 40%);
+
+animation:auroraMove 18s linear infinite alternate;
+
+z-index:-5;
+
+pointer-events:none;
+
+}
+
+@keyframes auroraMove{
+
+0%{
+
+transform:scale(1) translate(0,0);
+
+}
+
+100%{
+
+transform:scale(1.2) translate(-80px,-40px);
+
+}
+
+}
