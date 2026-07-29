@@ -1979,3 +1979,40 @@ transform:none;
 }
 
 }
+/* Scroll Progress Bar */
+
+#scroll-progress{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:4px;
+
+width:0%;
+
+background:linear-gradient(90deg,#00d4ff,#7b2cff);
+
+z-index:99999;
+
+transition:width .2s linear;
+
+}
+
+.nav-links a.active{
+
+color:#00d4ff;
+
+}
+
+.hero.sticky{
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+background:rgba(5,10,25,.80);
+
+}
