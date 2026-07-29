@@ -318,3 +318,163 @@ window.addEventListener("scroll", () => {
     }
 
 });
+/*=========================================
+        ANIMATED COUNTERS
+=========================================*/
+
+const counters = document.querySelectorAll(".counter");
+
+const counterObserver = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (!entry.isIntersecting) return;
+
+        const counter = entry.target;
+
+        const target = +counter.dataset.target;
+
+        const speed = 80;
+
+        let count = 0;
+
+        function updateCounter() {
+
+            const increment = Math.ceil(target / speed);
+
+            count += increment;
+
+            if (count >= target) {
+
+                counter.innerText = target + "+";
+
+            } else {
+
+                counter.innerText = count;
+
+                requestAnimationFrame(updateCounter);
+
+            }
+
+        }
+
+        updateCounter();
+
+        counterObserver.unobserve(counter);
+
+    });
+
+}, {
+
+    threshold: 0.5
+
+});
+
+counters.forEach(counter => {
+
+    counterObserver.observe(counter);
+
+});
+
+
+/*=========================================
+            FAQ ACCORDION
+=========================================*/
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+
+    const question = item.querySelector(".faq-question");
+
+    question.addEventListener("click", () => {
+
+        faqItems.forEach(faq => {
+
+            if (faq !== item) {
+
+                faq.classList.remove("active");
+
+            }
+
+        });
+
+        item.classList.toggle("active");
+
+    });
+
+});
+
+
+/*=========================================
+          SCROLL REVEAL EFFECT
+=========================================*/
+
+const revealElements = document.querySelectorAll(
+
+    ".service-card, .project-card, .about-card, .testimonial-card, .tech-card"
+
+);
+
+const revealObserver = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.15
+
+});
+
+revealElements.forEach(el => {
+
+    revealObserver.observe(el);
+
+});
+
+
+/*=========================================
+         MAGNETIC BUTTON EFFECT
+=========================================*/
+
+const buttons = document.querySelectorAll(
+
+".btn-primary, .btn-secondary"
+
+);
+
+buttons.forEach(button => {
+
+button.addEventListener("mousemove", e => {
+
+const rect = button.getBoundingClientRect();
+
+const x = e.clientX - rect.left;
+
+const y = e.clientY - rect.top;
+
+const moveX = (x - rect.width / 2) / 8;
+
+const moveY = (y - rect.height / 2) / 8;
+
+button.style.transform =
+
+`translate(${moveX}px, ${moveY}px)`;
+
+});
+
+button.addEventListener("mouseleave", () => {
+
+button.style.transform = "translate(0,0)";
+
+});
+
+});
