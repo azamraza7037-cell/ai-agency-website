@@ -2408,3 +2408,29 @@ body{
     mask-image:radial-gradient(circle, black 40%, transparent 100%);
 
 }
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 30px rgba(0, 183, 255, 0.6));
+    animation: floatRobot 4s ease-in-out infinite;
+}
+
+@keyframes floatRobot {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
