@@ -478,3 +478,130 @@ button.style.transform = "translate(0,0)";
 });
 
 });
+/*=========================================
+      PREMIUM MOUSE GLOW EFFECT
+=========================================*/
+
+const glow = document.createElement("div");
+
+glow.className = "cursor-glow";
+
+document.body.appendChild(glow);
+
+document.addEventListener("mousemove", (e) => {
+
+    glow.style.left = e.clientX + "px";
+
+    glow.style.top = e.clientY + "px";
+
+});
+
+
+/*=========================================
+        PREMIUM CARD TILT
+=========================================*/
+
+const tiltCards = document.querySelectorAll(
+
+".service-card,.project-card,.about-card,.testimonial-card,.tech-card"
+
+);
+
+tiltCards.forEach(card => {
+
+    card.addEventListener("mousemove", (e) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+
+        const y = e.clientY - rect.top;
+
+        const rotateY =
+
+            ((x / rect.width) - 0.5) * 16;
+
+        const rotateX =
+
+            ((y / rect.height) - 0.5) * -16;
+
+        card.style.transform =
+
+`perspective(1000px)
+rotateX(${rotateX}deg)
+rotateY(${rotateY}deg)
+translateY(-8px)`;
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform =
+
+"perspective(1000px) rotateX(0) rotateY(0)";
+
+    });
+
+});
+
+
+/*=========================================
+      FLOATING HERO IMAGE
+=========================================*/
+
+const heroImage = document.querySelector(".hero-image img");
+
+if(heroImage){
+
+let float = 0;
+
+setInterval(()=>{
+
+float += 0.05;
+
+heroImage.style.transform =
+
+`translateY(${Math.sin(float)*10}px)`;
+
+},20);
+
+}
+
+
+/*=========================================
+         BACK TO TOP BUTTON
+=========================================*/
+
+const topBtn = document.createElement("button");
+
+topBtn.innerHTML = "↑";
+
+topBtn.className = "back-top";
+
+document.body.appendChild(topBtn);
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>500){
+
+topBtn.classList.add("show-top");
+
+}else{
+
+topBtn.classList.remove("show-top");
+
+}
+
+});
+
+topBtn.addEventListener("click",()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+});
