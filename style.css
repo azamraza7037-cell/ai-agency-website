@@ -2711,3 +2711,36 @@ transform:scale(1.2) translate(-80px,-40px);
 }
 
 }
+/* ==========================================
+   PREMIUM CURSOR GLOW
+========================================== */
+
+.cursor-glow{
+
+position:fixed;
+
+width:260px;
+
+height:260px;
+
+border-radius:50%;
+
+pointer-events:none;
+
+background:radial-gradient(circle,
+rgba(0,229,255,.18),
+transparent 70%);
+
+transform:translate(-50%,-50%);
+
+mix-blend-mode:screen;
+
+filter:blur(8px);
+
+z-index:0;
+
+transition:
+left .08s linear,
+top .08s linear;
+
+}
