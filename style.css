@@ -2080,3 +2080,86 @@ opacity:1;
 transform:translateY(0);
 
 }
+/*=========================================
+        CURSOR GLOW
+=========================================*/
+
+.cursor-glow{
+
+position:fixed;
+
+width:260px;
+
+height:260px;
+
+border-radius:50%;
+
+background:radial-gradient(circle,
+rgba(0,212,255,.20),
+transparent 70%);
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+z-index:0;
+
+transition:left .05s linear,
+top .05s linear;
+
+}
+
+
+/*=========================================
+      BACK TO TOP
+=========================================*/
+
+.back-top{
+
+position:fixed;
+
+right:30px;
+
+bottom:30px;
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#00d4ff,#7b2cff);
+
+color:#fff;
+
+font-size:22px;
+
+cursor:pointer;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.35s;
+
+box-shadow:0 10px 30px rgba(0,212,255,.35);
+
+z-index:999;
+
+}
+
+.show-top{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.back-top:hover{
+
+transform:translateY(-6px);
+
+}
