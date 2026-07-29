@@ -605,3 +605,131 @@ behavior:"smooth"
 });
 
 });
+/*=========================================
+        PREMIUM PRELOADER
+=========================================*/
+
+window.addEventListener("load", () => {
+
+    const loader = document.querySelector(".preloader");
+
+    if (loader) {
+
+        loader.style.opacity = "0";
+
+        setTimeout(() => {
+
+            loader.style.display = "none";
+
+        }, 700);
+
+    }
+
+});
+
+
+/*=========================================
+      BUTTON RIPPLE EFFECT
+=========================================*/
+
+const rippleButtons = document.querySelectorAll(
+
+".btn-primary,.btn-secondary"
+
+);
+
+rippleButtons.forEach(button => {
+
+button.addEventListener("click",function(e){
+
+const circle=document.createElement("span");
+
+const diameter=Math.max(
+
+this.clientWidth,
+
+this.clientHeight
+
+);
+
+const radius=diameter/2;
+
+circle.style.width=
+
+circle.style.height=
+
+`${diameter}px`;
+
+circle.style.left=
+
+`${e.clientX-this.offsetLeft-radius}px`;
+
+circle.style.top=
+
+`${e.clientY-this.offsetTop-radius}px`;
+
+circle.classList.add("ripple");
+
+const ripple=this.getElementsByClassName("ripple")[0];
+
+if(ripple){
+
+ripple.remove();
+
+}
+
+this.appendChild(circle);
+
+});
+
+});
+
+
+/*=========================================
+      HERO TEXT REVEAL
+=========================================*/
+
+const heroTexts=document.querySelectorAll(
+
+".hero-text h1,.hero-text p,.typing-text"
+
+);
+
+heroTexts.forEach((item,index)=>{
+
+item.style.opacity="0";
+
+item.style.transform="translateY(40px)";
+
+setTimeout(()=>{
+
+item.style.transition=".8s ease";
+
+item.style.opacity="1";
+
+item.style.transform="translateY(0)";
+
+},300+(index*200));
+
+});
+
+
+/*=========================================
+      HERO PARALLAX EFFECT
+=========================================*/
+
+window.addEventListener("mousemove",(e)=>{
+
+const hero=document.querySelector(".hero-image");
+
+if(!hero) return;
+
+const x=(window.innerWidth/2-e.clientX)/40;
+
+const y=(window.innerHeight/2-e.clientY)/40;
+
+hero.style.transform=
+
+`translate(${x}px,${y}px)`;
+
+});
