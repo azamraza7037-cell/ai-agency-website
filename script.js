@@ -907,7 +907,7 @@ year.textContent=new Date().getFullYear();
    CURSOR GLOW
 ========================================== */
 
-const glow=document.querySelector(".cursor-glow");
+
 
 document.addEventListener("mousemove",(e)=>{
 
